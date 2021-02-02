@@ -1,7 +1,7 @@
 /// <reference types="Cypress" />
 
-describe('My First Test Suite', () => {
-    it('My First Test Case', () => {
+describe('My Second Test Suite', () => {
+    it('My Second Test Case', () => {
         cy.visit("https://rahulshettyacademy.com/seleniumPractise/#/");
         cy.get('.search-keyword').type('ca')
         cy.wait(2000)
@@ -16,9 +16,8 @@ describe('My First Test Suite', () => {
                 element.find('button').click();
             }
         });
-        cy.get('.brand').should('have.text', 'GREENKART');
-        cy.get('.brand').then(logo => {
-            cy.log(logo.text());
-        });
+        cy.get('.cart-icon > img').click();
+        cy.contains('PROCEED TO CHECKOUT').click();
+        cy.contains('Place Order').click();
     })
 })
