@@ -9,5 +9,3 @@ describe('My Sixth Test Suite', () => {
         cy.url().should('include', 'top');
     });
 });
-
-
