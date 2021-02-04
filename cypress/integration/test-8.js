@@ -1,7 +1,11 @@
 /// <reference types="Cypress" />
+import HomePage from "./page-objects/home-page";
+import ProductPage from "./page-objects/product-page";
 
 describe('My Eighth Test Suite', () => {
     let data;
+    const homePage = new HomePage();
+    const productPage = new ProductPage();
 
     before(async () => {
         data = await cy.fixture('example');
@@ -10,11 +14,15 @@ describe('My Eighth Test Suite', () => {
     it('My Eighth Test Case', () => {
         cy.visit('https://rahulshettyacademy.com/angularpractice/');
 
-        cy.get('form input[name="name"]').type(data.name);
-        cy.get('select').select(data.gender);
-        cy.get('form-comp h4 > input[name="name"]').should('have.value', data.name);
-        cy.get('form input[name="name"]').should('have.attr', 'minlength', '2');
-        cy.get('#inlineRadio3').should('be.disabled');
-        cy.selectProduct('Blackberry');
+        homePage.getEditBox().type(data.name);
+        homePage.getGender().select(data.gender);
+        homePage.getTwoWayDataBinding().should('have.value', data.name);
+        homePage.getEditBox().should('have.attr', 'minlength', '2');
+        homePage.getEntrepreneur().should('be.disabled');
+        homePage.getShopTab().click();
+        data.productsName.forEach((productName) => {
+            cy.selectProduct(productName);
+        });
+        productPage.getCheckoutButton().click();
     });
 });

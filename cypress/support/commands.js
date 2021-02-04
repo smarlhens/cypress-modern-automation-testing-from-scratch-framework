@@ -25,8 +25,7 @@
 // Cypress.Commands.overwrite("visit", (originalFn, url, options) => { ... })
 
 Cypress.Commands.add("selectProduct", (productName) => {
-    cy.get(':nth-child(2) > .nav-link').click();
-    cy.get('#h4.card-title').then((element, index) => {
+    cy.get('h4.card-title').each((element, index) => {
         if (element.text().includes(productName)) {
             cy.get('button.btn.btn-info').eq(index).click();
         }
