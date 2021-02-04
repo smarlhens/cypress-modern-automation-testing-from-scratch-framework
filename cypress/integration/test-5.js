@@ -2,7 +2,7 @@
 
 describe('My Fifth Test Suite', () => {
     it('My Fifth Test Case', () => {
-        cy.visit("https://rahulshettyacademy.com/AutomationPractice/");
+        cy.visit(`${Cypress.env('url')}/AutomationPractice/`);
 
         cy.get('tr td:nth-child(2)').each((element, index) => {
 

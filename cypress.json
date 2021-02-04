@@ -1,5 +1,9 @@
 {
   "chromeWebSecurity": false,
   "modifyObstructiveCode": true,
-  "experimentalSourceRewriting": true
+  "experimentalSourceRewriting": true,
+  "defaultCommandTimeout": 6000,
+  "env": {
+    "url": "https://rahulshettyacademy.com"
+  }
 }

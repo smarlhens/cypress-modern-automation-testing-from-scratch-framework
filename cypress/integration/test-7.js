@@ -2,7 +2,7 @@
 
 describe('My Seventh Test Suite', () => {
     it('My Seventh Test Case', () => {
-        cy.visit("https://rahulshettyacademy.com/AutomationPractice/");
+        cy.visit(`${Cypress.env('url')}/AutomationPractice/`);
 
         cy.get('#opentab').then(element => {
             const url = element.prop();
