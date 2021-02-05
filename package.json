@@ -4,7 +4,11 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "node_modules\\.bin\\cypress run",
+    "test:headful": "npm run test -- --headed",
+    "test:chrome": "npm run test -- -b chrome --headless",
+    "test:record": "npm run test -- --record --key <KEY> --reporter mochawesome",
+    "test:greenkart": "npm run test -- --spec \"cypress/integration/greenkart/*\""
   },
   "author": "",
   "license": "ISC",
