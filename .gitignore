@@ -215,5 +215,6 @@ modules.xml
 .idea/sonarlint
 
 mochawesome-report/
+reports/
 
 # End of https://www.toptal.com/developers/gitignore/api/webstorm+all,cypressio,node

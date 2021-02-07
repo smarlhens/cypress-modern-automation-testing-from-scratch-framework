@@ -8,15 +8,27 @@
     "test:headful": "npm run test -- --headed",
     "test:chrome": "npm run test -- -b chrome --headless",
     "test:record": "npm run test -- --record --key <KEY> --reporter mochawesome",
-    "test:greenkart": "npm run test -- --spec \"cypress/integration/greenkart/*\""
+    "test:greenkart": "npm run test -- --spec \"cypress/integration/greenkart/*\"",
+    "generate:report": "node cucumber-report-html.js"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
     "@types/cypress": "^1.1.3",
     "cypress": "^6.4.0",
+    "cypress-cucumber-preprocessor": "^4.0.0",
     "cypress-iframe": "^1.0.1",
     "mocha": "^8.2.1",
-    "mochawesome": "^6.2.1"
+    "mochawesome": "^6.2.1",
+    "multiple-cucumber-html-reporter": "^1.18.0"
+  },
+  "cypress-cucumber-preprocessor": {
+    "nonGlobalStepDefinitions": true,
+    "cucumberJson": {
+      "generate": true,
+      "outputFolder": "cypress/cucumber-json",
+      "filePrefix": "",
+      "fileSuffix": ".cucumber"
+    }
   }
 }
