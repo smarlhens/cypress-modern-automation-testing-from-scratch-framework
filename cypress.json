@@ -11,7 +11,5 @@
   "retries": {
     "runMode": 1,
     "openMode": 0
-  },
-  "ignoreTestFiles": "*.js",
-  "testFiles": "**/*.{feature,features}"
+  }
 }
